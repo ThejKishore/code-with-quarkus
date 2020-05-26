@@ -1,15 +1,15 @@
 package org.acme;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
-@Path("/hello")
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/hello")
 public class ExampleResource {
 
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @GetMapping
     public String hello() {
         return "hello";
     }
